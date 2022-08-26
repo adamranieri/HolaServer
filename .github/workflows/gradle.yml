@@ -1,11 +1,10 @@
-
 name: Java CI with Gradle
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ $default-branch ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ $default-branch ]
 
 permissions:
   contents: read
@@ -22,6 +21,7 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-        
-    - run: sudo apt install gradle
-    - run: sudo gradle build
+    - name: Build with Gradle
+      uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
+      with:
+        arguments: build
