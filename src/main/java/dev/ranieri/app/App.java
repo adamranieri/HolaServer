@@ -11,6 +11,8 @@ public class App {
             ctx.result("Hola " + System.getenv("SOMETHING"));
         });
 
+        app.get("wassup",ctx -> ctx.result("cool"));
+
         app.start();
     }
 }
