@@ -23,5 +23,5 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         
-    - run: apt install gradle
-    - run: gradle build
+    - run: sudo apt install gradle
+    - run: sudo gradle build
